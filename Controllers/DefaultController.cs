@@ -33,5 +33,34 @@ namespace MvcCvProject.Controllers
 			var values = db.TblEducation.ToList();
 			return PartialView(values);
 		}
+
+		public PartialViewResult Skills()
+		{
+			var values = db.TblSkills.ToList();
+			return PartialView(values);
+		}
+
+		public PartialViewResult Interests()
+		{
+			var values = db.TblInterests.ToList();
+			return PartialView(values);
+		}
+
+		public PartialViewResult Certfications()
+		{
+			var values = db.TblCertfications.ToList();
+			return PartialView(values);
+		}
+
+		public PartialViewResult Courses()
+		{
+			var values = db.TblCourses.ToList();
+			return PartialView(values);
+		}
+
+		public PartialViewResult Contact()
+		{
+			return PartialView();
+		}
 	}
 }
