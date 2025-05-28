@@ -1,0 +1,18 @@
+﻿@using MvcCvProject.Models.Entity
+@model List<TblProjects>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Projeler</h2>
+    @foreach (var value in Model)
+    {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@value.title</h3>
+                <p>@value.description</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">@value.tools</span></div>
+        </div>
+    }
+</div>
+
+
