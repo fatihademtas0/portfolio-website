@@ -57,9 +57,17 @@ namespace MvcCvProject.Controllers
 			var values = db.TblCourses.ToList();
 			return PartialView(values);
 		}
-
+		[HttpGet]
 		public PartialViewResult Contact()
 		{
+			return PartialView();
+		}
+		[HttpPost]
+		public PartialViewResult Contact(TblContact t)
+		{
+			t.date = DateTime.Parse(DateTime.Now.ToShortDateString());
+			db.TblContact.Add(t);
+			db.SaveChanges();
 			return PartialView();
 		}
 	}
