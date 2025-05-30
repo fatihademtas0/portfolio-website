@@ -8,10 +8,6 @@ namespace MvcCvProject.Repositories
 {
 	public class ExperienceRepository : GenericRepository<TblExperiences>
 	{
-		DbCvEntities2 db = new DbCvEntities2();
-		public List<TblExperiences> List()
-		{
-			return db.TblExperiences.ToList();
-		}
+
 	}
 }

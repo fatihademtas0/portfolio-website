@@ -1,0 +1,82 @@
+﻿@using MvcCvProject.Models.Entity
+@model List<TblSkills>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ string color = "";}
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Skill List</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <a href="/Skill/AddSkill" class="btn btn-primary mb-3">Add new skill</a>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">#</th>
+                                                <th>Skill</th>
+                                                <th>Progress Bar</th>
+                                                <th style="width: 40px">Ratio</th>
+                                                <th style="width: 30px">Update</th>
+                                                <th style="width: 30px">Delete</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach(var item in Model)
+                                            {
+                                                if(item.rate>= 75)
+                                                {
+                                                    color = "bg-success";
+                                                }else if(item.rate >= 55){
+                                                    color = "bg-primary";
+                                                }else if(item.rate >= 35)
+                                                {
+                                                    color = "bg-warning";
+                                                }
+                                                else if (item.rate < 35)
+                                                {
+                                                    color = "bg-danger";
+                                                }
+                                            <tr>
+                                                <td>@item.id.</td>
+                                                <td>@item.skill</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar @color" style="width: @item.rate%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge @color">@item.rate%</span></td>
+                                                <td><a href="/Skill/UpdateSkill/@item.id" class="btn btn-warning">Update</a></td>
+                                                <td><a href="/Skill/DeleteSkill/@item.id" class="btn btn-danger">Delete</a></td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+</body>
+</html>
+
+
