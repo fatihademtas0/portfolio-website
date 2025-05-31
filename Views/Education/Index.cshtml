@@ -1,5 +1,5 @@
 ﻿@using MvcCvProject.Models.Entity
-@model List<TblExperiences>
+@model List<TblEducation>
 
 @{
     ViewBag.Title = "Index";
@@ -7,15 +7,15 @@
 }
 
 <br />
-<h2>Experiences List</h2>
+<h2>Educations List</h2>
 <br />
 
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
         <th>Title</th>
-        <th>Subtitle</th>
-        <th>Description</th>
+        <th>Department</th>
+        <th>GPA</th>
         <th>Date</th>
         <th>Update</th>
         <th>Delete</th>
@@ -26,16 +26,16 @@
         <tr>
             <td>@item.id</td>
             <td>@item.title</td>
-            <td>@item.title</td>
-            <td>@item.description</td>
+            <td>@item.subtitle</td>
+            <td>@item.gpa</td>
             <td>@item.date</td>
-            <td><a href="/Experience/GetExperience/@item.id" class="btn btn-warning">Update</a></td>
-            <td><a href="/Experience/DeleteExperience/@item.id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Education/UpdateEducation/@item.id" class="btn btn-warning">Update</a></td>
+            <td><a href="/Education/DeleteEducation/@item.id" class="btn btn-danger">Delete</a></td>
         </tr>
 
     }
 
 </table>
 
-<a href="/Experience/AddExperience" class="btn btn-primary">Add new experience</a>
+<a href="/Education/AddEducation" class="btn btn-primary">Add new education</a>
 

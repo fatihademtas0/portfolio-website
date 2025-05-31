@@ -11,10 +11,12 @@ namespace MvcCvProject.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TblEducation
+	using System.ComponentModel.DataAnnotations;
+
+	public partial class TblEducation
     {
         public int id { get; set; }
+        [Required(ErrorMessage = "You must fill this field!")]
         public string title { get; set; }
         public string subtitle { get; set; }
         public string department { get; set; }
