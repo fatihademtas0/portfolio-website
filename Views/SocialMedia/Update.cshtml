@@ -1,0 +1,41 @@
+﻿@model MvcCvProject.Models.Entity.TblSocial
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Update Account</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label>Platform Name</label>
+        @Html.TextBoxFor(x => x.platform_name, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label>Link</label>
+        @Html.TextBoxFor(x => x.link, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label>Icon</label>
+        @Html.TextBoxFor(x => x.icon, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <button class="btn btn-info" style="padding: 8px 16px">Save</button>
+</form>
+

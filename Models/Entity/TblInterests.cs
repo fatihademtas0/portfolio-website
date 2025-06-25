@@ -16,6 +16,5 @@ namespace MvcCvProject.Models.Entity
     {
         public int id { get; set; }
         public string description1 { get; set; }
-        public string description2 { get; set; }
     }
 }

@@ -70,7 +70,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description1" Type="varchar" MaxLength="500" />
-          <Property Name="description2" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TblLogin">
           <Key>
@@ -98,6 +97,15 @@
           <Property Name="skill" Type="varchar" MaxLength="100" />
           <Property Name="rate" Type="tinyint" />
         </EntityType>
+        <EntityType Name="TblSocial">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="platform_name" Type="varchar" MaxLength="50" />
+          <Property Name="link" Type="varchar" MaxLength="150" />
+          <Property Name="icon" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCertfications" EntityType="Self.TblCertfications" Schema="dbo" store:Type="Tables" />
@@ -109,6 +117,7 @@
           <EntitySet Name="TblLogin" EntityType="Self.TblLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblProjects" EntityType="Self.TblProjects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkills" EntityType="Self.TblSkills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocial" EntityType="Self.TblSocial" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -179,7 +188,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="description2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TblLogin">
           <Key>
@@ -218,7 +226,17 @@
           <EntitySet Name="TblLogin" EntityType="Self.TblLogin" />
           <EntitySet Name="TblProjects" EntityType="Self.TblProjects" />
           <EntitySet Name="TblSkills" EntityType="Self.TblSkills" />
+          <EntitySet Name="TblSocial" EntityType="DbCvModel.TblSocial" />
         </EntityContainer>
+        <EntityType Name="TblSocial">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="platform_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="link" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -295,7 +313,6 @@
               <MappingFragment StoreEntitySet="TblInterests">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="description1" ColumnName="description1" />
-                <ScalarProperty Name="description2" ColumnName="description2" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -325,6 +342,16 @@
                 <ScalarProperty Name="rate" ColumnName="rate" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="skill" ColumnName="skill" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSocial">
+            <EntityTypeMapping TypeName="DbCvModel.TblSocial">
+              <MappingFragment StoreEntitySet="TblSocial">
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="platform_name" ColumnName="platform_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

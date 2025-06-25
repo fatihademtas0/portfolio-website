@@ -12,13 +12,11 @@ namespace MvcCvProject.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TblEducation
+    public partial class TblSocial
     {
         public int id { get; set; }
-        public string title { get; set; }
-        public string subtitle { get; set; }
-        public string department { get; set; }
-        public string gpa { get; set; }
-        public string date { get; set; }
+        public string platform_name { get; set; }
+        public string link { get; set; }
+        public string icon { get; set; }
     }
 }

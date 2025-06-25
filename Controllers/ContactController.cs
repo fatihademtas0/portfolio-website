@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcCvProject.Models.Entity;
+using MvcCvProject.Repositories;
 
 namespace MvcCvProject.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: About
-        public ActionResult Index()
+		GenericRepository<TblContact> repo = new GenericRepository<TblContact>();
+		public ActionResult Index()
         {
-            return View();
+            var contacts = repo.List();
+            return View(contacts);
         }
     }
 }

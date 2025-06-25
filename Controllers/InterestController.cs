@@ -14,7 +14,7 @@ namespace MvcCvProject.Controllers
 		public ActionResult Index()
         {
 			var interests = repo.List();
-			return View();
+			return View(interests);
         }
 
 		public ActionResult DeleteInterest(int id)
@@ -43,7 +43,6 @@ namespace MvcCvProject.Controllers
 		{
 			var interest= repo.Find(x => x.id == t.id);
 			interest.description1 = t.description1;
-			interest.description2 = t.description2;
 			repo.TUpdate(interest);
 			return RedirectToAction("Index");
 		}

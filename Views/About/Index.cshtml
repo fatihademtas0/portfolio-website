@@ -1,30 +1,34 @@
-﻿
+﻿﻿@using MvcCvProject.Models.Entity
+@model List<TblAbout>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Hakkımda Menüsü</h2>
+<br />
+<h2>About</h2>
+<br />
+@foreach (var i in Model)
+{
+    <label>Name</label>
+    <input type="text" class="form-control" name="name" value="@i.name" readonly />
+    <label>Last Name</label>
+    <input type="text" class="form-control" name="lastname" value="@i.lastname" readonly />
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
+    <label>Address</label>
+    <input type="text" class="form-control" name="address" value="@i.address" readonly />
 
-        <th>İsim</th>
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" value="@i.email" readonly />
 
-        <th>Şehir</th>
-    </tr>
+    <label>Phone Number</label>
+    <input type="text" class="form-control" name="phone" value="@i.phone" readonly />
 
-    <tr>
-        <td>1</td>
-        <td>Ahmet</td>
-        <td>İstanbul</td>
-    </tr>
+    <label>Description</label>
+    <textarea rows="3" class="form-control" name="description" readonly>@i.description</textarea>
 
-    <tr>
-        <td>2</td>
-        <td>Fatih</td>
-        <td>Kırşehir</td>
-    </tr>
-</table>
-
+    <label>Image</label>
+    <input type="text" class="form-control" name="image" value="@i.image" readonly />
+    <br />
+    <a href="/About/GetAbout/@i.id" class="btn btn-info">Update</a>
+}

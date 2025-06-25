@@ -1,0 +1,62 @@
+﻿@using MvcCvProject.Models.Entity;
+@model List<TblContact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                      
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                        <!-- /.tab-pane -->
+                                        <div class="tab-pane" id="timeline">
+                                            <!-- The timeline -->
+                                            <div class="timeline timeline-inverse">
+                                                <!-- timeline time label -->
+                                                @foreach (var item in Model)
+                                                {
+                                                <div class="time-label">
+                                                    <span class="bg-primary">
+                                                        @item.date
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <i class="fas fa-comments bg-warning"></i>
+
+                                                    <div class="timeline-item">
+                                                        <span class="time"><i></i> @item.mail</span>
+
+                                                        <h3 class="timeline-header"><a href="#">@item.name</a> sent a message.</h3>
+
+                                                        <div class="timeline-body font-weight-bold">
+                                                            <h4>@item.about</h4>
+                                                        </div>
+
+                                                        <div class="timeline-body">
+                                                            @item.message
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                }
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+</body>
+</html>
+
+
+

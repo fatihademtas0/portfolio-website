@@ -7,20 +7,28 @@ using MvcCvProject.Models.Entity;
 
 namespace MvcCvProject.Controllers
 {
-    public class DefaultController : Controller
-    {
+	public class DefaultController : Controller
+	{
 		DbCvEntities2 db = new DbCvEntities2();
 		public ActionResult Index()
-        {
-            var values = db.TblAbout.ToList();		
+		{
+			var values = db.TblAbout.ToList();
 			return View(values);
-        }
+		}
 
-        public PartialViewResult Experiences()
-        {
-            var values = db.TblExperiences.ToList();
-            return PartialView(values);
-        }
+
+
+		public PartialViewResult SocialMedia()
+		{
+			var values = db.TblSocial.ToList();
+			return PartialView(values);
+		}
+
+		public PartialViewResult Experiences()
+		{
+			var values = db.TblExperiences.ToList();
+			return PartialView(values);
+		}
 
 		public PartialViewResult Projects()
 		{

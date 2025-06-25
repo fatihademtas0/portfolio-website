@@ -1,0 +1,88 @@
+﻿@using MvcCvProject.Models.Entity
+@model List<TblSocial>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Social Media Accounts</h2>
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Skill List</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th style="width: 30px">Platform Name</th>
+                                        <th style="width: 30px">Update</th>
+                                        <th style="width: 30px">Delete</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.id</td>
+                                            <td>@item.platform_name</td>
+
+                                            <td><a href="/SocialMedia/Update/@item.id" class="btn btn-warning">Update</a></td>
+                                            <td><a href="/SocialMedia/Delete/@item.id" class="btn btn-danger">Delete</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <button data-toggle="modal" data-target="#Modal1" class="btn btn-primary mt-3">Add new social media</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Social Media Account</h2>
+                </div>
+                <form action="Add" method="post">
+                    <div class="modal-body">
+
+                        <label>Platform Name</label>
+                        <input type="text" name="platform_name" class="form-control" />
+                        <br />
+
+                        <label>Link</label>
+                        <input type="text" name="link" class="form-control" />
+                        <br />
+
+                        <label>Icon Value</label>
+                        <input type="text" name="icon" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-info">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
