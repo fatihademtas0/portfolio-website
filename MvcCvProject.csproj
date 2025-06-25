@@ -2509,6 +2509,12 @@
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Course\AddCourse.cshtml" />
     <Content Include="Views\Course\UpdateCourse.cshtml" />
+    <Content Include="Views\Certificate\Index.cshtml" />
+    <Content Include="Views\Certificate\GetCertificate.cshtml" />
+    <Content Include="Views\Certificate\AddCertificate.cshtml" />
+    <Content Include="Views\Interest\Index.cshtml" />
+    <Content Include="Views\Interest\UpdateInterest.cshtml" />
+    <Content Include="Views\Interest\AddInterest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
