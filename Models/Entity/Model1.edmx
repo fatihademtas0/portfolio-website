@@ -18,6 +18,14 @@
           <Property Name="description" Type="varchar(max)" />
           <Property Name="image" Type="varchar" MaxLength="150" />
         </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="100" />
+          <Property Name="password" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="TblCertfications">
           <Key>
             <PropertyRef Name="id" />
@@ -108,6 +116,7 @@
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCertfications" EntityType="Self.TblCertfications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblContact" EntityType="Self.TblContact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCourses" EntityType="Self.TblCourses" Schema="dbo" store:Type="Tables" />
@@ -227,6 +236,7 @@
           <EntitySet Name="TblProjects" EntityType="Self.TblProjects" />
           <EntitySet Name="TblSkills" EntityType="Self.TblSkills" />
           <EntitySet Name="TblSocial" EntityType="DbCvModel.TblSocial" />
+          <EntitySet Name="TblAdmin" EntityType="DbCvModel.TblAdmin" />
         </EntityContainer>
         <EntityType Name="TblSocial">
           <Key>
@@ -236,6 +246,14 @@
           <Property Name="platform_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="link" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -351,6 +369,15 @@
                 <ScalarProperty Name="icon" ColumnName="icon" />
                 <ScalarProperty Name="link" ColumnName="link" />
                 <ScalarProperty Name="platform_name" ColumnName="platform_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
