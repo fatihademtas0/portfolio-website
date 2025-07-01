@@ -1,4 +1,4 @@
-# 🎥 Admin Panelli Cv Sitesi
+# 👤 Admin Panelli Cv Sitesi
 
 Admin Panelli Cv Sitesi, kullanıcıların özgeçmişlerini (CV) web tabanlı olarak oluşturup görüntüleyebileceği, kişisel bilgiler, deneyimler, projeler, eğitimler, beceriler ve daha fazlasını yönetebileceği bir ASP.NET MVC uygulamasıdır. Kullanıcı dostu arayüzü ile kolayca özgeçmiş bilgileri eklenebilir, güncellenebilir ve ziyaretçilere sunulabilir.
 
