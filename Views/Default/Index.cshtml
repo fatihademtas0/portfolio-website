@@ -62,7 +62,7 @@
                     </h1>
                     <div class="subheading mb-5">
                         @value.address  ·  @value.phone  ·
-                        <a href="mailto:name@email.com">@value.email</a>
+                        <a href="mailto:@value.email">@value.email.ToLower()</a>
                     </div>
                     <p class="lead mb-5">@value.description</p>
                     @Html.Action("SocialMedia")

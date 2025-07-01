@@ -47,73 +47,79 @@
                     </div>
                 </div>
 
+                @{
+                    Layout = null;
+                    string currentController = ViewContext.RouteData.Values["controller"].ToString();
+                    string currentAction = ViewContext.RouteData.Values["action"].ToString();
+                }
+
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
-                            <a href="/About/Index/" class="nav-link">
+                            <a href="/About/Index/" class="nav-link @(currentController == "About" ? "active" : "")">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>Summary</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/Experience/Index/" class="nav-link">
+                            <a href="/Experience/Index/" class="nav-link @(currentController == "Experience" ? "active" : "")">
                                 <i class="nav-icon fas fa-briefcase"></i>
                                 <p>Experiences</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Project/Index" class="nav-link">
+                            <a href="/Project/Index" class="nav-link @(currentController == "Project" ? "active" : "")">
                                 <i class="nav-icon fas fa-tasks"></i>
                                 <p>Projects</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Education/Index" class="nav-link">
+                            <a href="/Education/Index" class="nav-link @(currentController == "Education" ? "active" : "")">
                                 <i class="nav-icon fas fa-graduation-cap"></i>
                                 <p>Education</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Skill/Index/" class="nav-link">
+                            <a href="/Skill/Index/" class="nav-link @(currentController == "Skill" ? "active" : "")">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>Skills</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Interest/Index/" class="nav-link">
+                            <a href="/Interest/Index/" class="nav-link @(currentController == "Interest" ? "active" : "")">
                                 <i class="nav-icon fas fa-heart"></i>
                                 <p>Hobbies</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Certificate/Index/" class="nav-link">
+                            <a href="/Certificate/Index/" class="nav-link @(currentController == "Certificate" ? "active" : "")">
                                 <i class="nav-icon fas fa-certificate"></i>
                                 <p>Certificates</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Course/Index/" class="nav-link">
+                            <a href="/Course/Index/" class="nav-link @(currentController == "Course" ? "active" : "")">
                                 <i class="nav-icon fas fa-chalkboard-teacher"></i>
                                 <p>Courses</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Contact/Index/" class="nav-link">
+                            <a href="/Contact/Index/" class="nav-link @(currentController == "Contact" ? "active" : "")">
                                 <i class="nav-icon fas fa-envelope"></i>
                                 <p>Contact</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/SocialMedia/Index/" class="nav-link">
+                            <a href="/SocialMedia/Index/" class="nav-link @(currentController == "SocialMedia" ? "active" : "")">
                                 <i class="nav-icon fas fa-icons"></i>
                                 <p>Social Media Accounts</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Admin/Index/" class="nav-link">
+                            <a href="/Admin/Index/" class="nav-link @(currentController == "Admin" ? "active" : "")">
                                 <i class="nav-icon fas fa-user-lock"></i>
                                 <p>Settings</p>
                             </a>
